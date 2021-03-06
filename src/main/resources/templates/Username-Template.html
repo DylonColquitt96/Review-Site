@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <link rel="stylesheet" th:href="@{/CSS/styles.css}"/>
+        <link rel="stylesheet" th:href="@{/CSS/layout.css}"/>
+        <title>Dungeons & Developers</title>
+    </head>
+
+    <body>
+
+        <nav class="landingheader">
+            <h1><strong>Dungeons & Developers</strong></h1>
+        </nav>
+        <div class = img-container>
+        <div class="containertt">
+            <p>Please Login</strong></span></p>
+            <form action="/setusername" method="POST">
+                <label for="userbox">Enter Username: </strong></label>
+                <input type="text" id="userbox" name="newUsername"/>
+                <button type="submit"><strong>Login</strong></button>
+            </form>
+            <th:block th:if="${!isValid}"><strong style="color: red">Please enter a valid login name!</strong></th:block>
+            </div>
+        </div>
+    </body>
+
+<footer>
+    <p>©Dungeons & Developers, LLC</p>
+</footer>
+</html>

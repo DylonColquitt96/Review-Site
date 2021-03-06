@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/CSS/styles.css}"/>
+    <link rel="stylesheet" th:href="@{/CSS/layout.css}"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Dungeons & Developers</title>
+</head>
+
+<body>
+    <div id="page-container">
+    <div id="content-wrap">
+    <nav>
+        <ul>
+            <li><a href="/Home">Home</a></li>
+            <li><a href="/Games">Games</a></li>
+            <li><a href="/Hashtags">Hashtags</a></li>
+            <li class="user" th:text="${username}"></li>
+        </ul>
+    </nav>
+
+    <div class="SideBar">
+        <ul>
+            <li></li>
+            <li class="user"><a href="/logout">Logout</a></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+
+    <div class="containertt">
+        <p><strong th:text="${gameName}"></strong></p>
+        <p><img th:src="@{'/Images/game-images-two/'+${id} + '.jpg'}"/> </p>
+                <div th:each="rev:${review}">
+                    <p th:text="${rev.review}">def</p>
+
+                    <div th:each="comm:${comments}">
+                        <p><span class="user" th:text="${username} + ' commented: '"></span></p>
+                        <em><p th:text="${comm.comment}">com</p></em>
+                        <hr>
+                    </div>
+
+                    <div th:each="tag:${hashtags}" class="hashtags">
+                        <p>
+                        <span th:text="${tag.name}"></span>
+                        <a th:href="'/deleteHashtag/' + ${tag.id} + '/' + ${gameId}" style="color: red">x</a>
+                        </p>
+                    </div>
+                </div>
+                    <hr>
+    </div>
+
+    <div class="containertt">
+        <form th:action="'/hashtag/'+${gameId}" method="POST">
+            <label for="htbox">Enter Hashtag</label>
+             <input type="text" id="htbox" name="newHashtag"/>
+            <button type="submit">Add Hashtag</button>
+        </form>
+    </div>
+
+    <div class="containertt">
+        <form th:action="'/comment/'+${gameId}" method="POST">
+            <label for="commentbox">Enter Comment</label>
+            <input type="text" id="commentbox" name="newComment"/>
+            <button type="submit">Add Comment</button>
+        </form>
+    </div>
+    </div>
+    <footer id="footer"><p>©Dungeons & Developers, LLC</p></footer>
+    </div>
+</body>
+
+
+</html>

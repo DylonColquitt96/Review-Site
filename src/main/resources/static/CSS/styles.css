@@ -1,0 +1,74 @@
+*{
+font-family: 'Montserrat', sans-serif;
+}
+/* Nav Bar */
+.landingheader{
+    font-size: 2rem;
+    font-color: green;
+}
+nav {
+    background-color: #362715;
+    font-size: larger;
+}
+
+nav li{
+    list-style-type: none;
+    font-size: larger;
+}
+
+nav li a{
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover{
+    color: green;
+}
+
+
+/* Side Bar */
+
+h2 {
+    color: white;
+}
+
+.SideBar {
+    background-color: #90A955;
+    
+}
+
+.SideBar li{
+    list-style-type: none;
+    font-size: larger;
+}
+
+.SideBar a {
+    text-decoration: none;
+    color: white;
+}
+
+.SideBar a:hover {
+    color: green;
+}
+
+/* main page*/
+
+
+.container{
+    margin: 10px;
+
+}
+
+h1{
+    color: green;
+    font-size: 2em;
+}
+
+footer {
+    color: green;
+}
+
+.user{
+    color: #B94227;
+}
+
